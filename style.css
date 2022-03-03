@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Libre+Franklin:wght@100&display=swap');
+
+:root {
+    --left-bg-color: #daa52099;
+    --left-btn-hover-color: #daa520;
+    --right-bg-color: #28282899;
+    --right-btn-hover-color: #282828;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+    .split.left {
+        left: 0;
+        background: url("img/iphone.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+        .split.left::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--left-bg-color);
+        }
+            .split.left .btn:hover {
+                background-color: var(--left-btn-hover-color);
+                border-color: var(--left-btn-hover-color);
+            }
+    .split.right {
+        right: 0;
+        background: url("img/samsung.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+        .split.right::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--right-bg-color);
+        }
+        .split.right .btn:hover {
+            background-color: var(--right-btn-hover-color);
+            border-color: var(--right-btn-hover-color);
+        }
+
+.btn {
+    position: absolute;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+footer {
+    position: absolute;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 10px;
+    bottom: 0px;
+    width: 100%;
+    height: 15px;
+}
